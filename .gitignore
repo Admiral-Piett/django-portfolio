@@ -1,0 +1,6 @@
+*.txt
+*.python-version
+*.pyc
+*.sqlite3
+
+.idea/*
