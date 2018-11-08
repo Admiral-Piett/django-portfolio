@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+}
+
+.link-container {
+    background: #514B4B;
+}
+
+.links {
+    display: flex;
+}
+
+.header-link {
+    color: #fff;
+    margin: 5px 10px 5px 10px;
+}
+
+.link-list {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding-top: 1rem;
+    padding-bottom: 1.3rem;
+}
+
+.project-container {
+    margin: 16px;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.project-slate {
+    background: #D4D2D2;
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    height: 100%;
+    max-width: 32vw;
+    max-height: 32vw;
+    min-width: 300px;
+    min-height: 300px;
+    margin: 5px;
+    flex-shrink: 1;
+}
+
+/* I may need some sort of clear div to put behind it to stop people from accidentally hovering on another tile and making it crazy.
+What I need is it to focus on tansitioning this one thing and then back while it's active, then worry about another hover situation.*/
+
+/*.project-slate:hover {
+    transition-duration: 2s;
+    postion: relative;
+    display: inline-block;
+    flex-grow: 1;
+}*/
+
+
+.project-image {
+    display: block;
+    width: 97%;
+    height: 65%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.project-title,
+.project-description,
+.project-link {
+    margin: .7rem 1rem .7rem 1rem;
+}
