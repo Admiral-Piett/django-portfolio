@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load mathfilters %}
 <link rel="stylesheet" type="text/css" href="{% static 'projects/style.css' %}" >
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -19,14 +20,12 @@
     </header>
 {% endblock %}
 
-<!--I need a placeholder for this when I hover and then I can just keep it in place and make it grow, pushing the other bits to the edge. (Probably add some-->
-<!--margin I can get rid of, or just push the other things down and make room in the page, etc.  However I still need to keep it in place.-->
-
 
 {% block projects %}
 <div class="project-container">
 {% for project in projects.all %}
-    <div class="project-slate count-{{ forloop.counter }}">
+    {% if  %}
+    <div class="project-slate count-{{ forloop.counter|sub:1 }} row-{{ forloop.counter|sub:1|intdiv:3 }}">
         <h3 class="project-title">{{ project.title }}</h3>
         <img class="project-image" src="{{ project.image.url }}" />
         <p class="project-description">{{ project.description }}</p>
