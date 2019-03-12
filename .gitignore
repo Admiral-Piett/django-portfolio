@@ -2,10 +2,12 @@
 *.python-version
 *.pyc
 *.sqlite3
+*.pdf
+*.png
 
 .idea/*
 
 */static
 */media
-*/migrations
+**/migrations/*
 *.vscode/

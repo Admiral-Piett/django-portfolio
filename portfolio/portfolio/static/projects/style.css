@@ -3,6 +3,11 @@ body {
     background: #282828;
 }
 
+h3,
+p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .link-container {
     background: #514B4B;
 }
@@ -15,6 +20,9 @@ body {
     color: #fff;
     margin: 5px 10px 5px 10px;
     font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1.4em;
+    text-decoration: none;
 }
 
 .link-list {
@@ -24,54 +32,87 @@ body {
     margin: 0;
     padding-top: 1rem;
     padding-bottom: 1.3rem;
+    margin-right: 3vw;
 }
 
-.project-container {
+.intro-meta-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.intro-name,
+.intro-description {
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.intro-name {
+    font-size: 2.5rem;
+    margin-top: 2.5vw;
+    margin-left: 7vw;
+}
+
+.intro-image-container {
+    width: 20vw;
+    min-width: 250px;
+    margin: 1vw 3vw 5vw 7vw;
+}
+
+.intro-image {
+    width: 100%;
+}
+
+.intro-description-container {
+    font-size: 1.5rem;
+    margin: 1vw 3vw 5vw 3vw;
+    line-height: 2.5rem;
+}
+
+.intro-description {
+    word-wrap: normal;
+}
+
+.project-container-row {
     margin: 16px;
     display: flex;
-    flex-flow: row wrap;
 }
 
 .project-slate {
+    border-radius: 5px;
     background: #D4D2D2;
     display: inline-block;
     vertical-align: top;
     width: 100%;
     height: 100%;
     max-width: 32vw;
-    max-height: 32vw;
-    min-width: 300px;
-    min-height: 300px;
+    max-height: 37vw;
     margin: auto;
     margin-bottom: 5px;
-    flex-shrink: 1;
+    box-shadow: 5px 10px #969595;
 }
-
-/* @media only screen and (max-width: 931px) {
-    .project-slate {
-        max-width: 90vw;
-        max-height: 90vw;
-    }
-
-    .project-image {
-        display: block;
-        width: 85vw;
-        height: 65vw;
-        margin-left: auto;
-        margin-right: auto;
-    }
-}; */
 
 .project-image {
     display: block;
     width: 97%;
-    height: 65%;
+    height: auto;
+    max-height: 65%;
     margin-left: auto;
     margin-right: auto;
-};
+}
 
 .project-title,
 .project-description,
 .project-link {
-    margin: .7rem 1rem .7rem 1rem;
+    margin: 1rem 1rem 1rem 1rem;
+}
+
+.project-description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.project-description-link-container {
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    height: 20vh;
 }

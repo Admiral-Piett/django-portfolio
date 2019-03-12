@@ -8,31 +8,50 @@
         <div class="link-container">
             <ul class="link-list">
                 <div class="links left">
-                    <li><a href="" class="header-link">Home</a></li>
+                    <li><a href="/" class="header-link">Home</a></li>
                 </div>
                 <div class="links right">
-                    <li><a href="" class="header-link">Resume</a></li>
-                    <li><a href="" class="header-link">Contact Me</a></li>
-                    <li><a href="" class="header-link">Projects</a></li>
+                    <li><a href="{% static 'Software Engineer Resume_Devin Humphreys.pdf' %}" class="header-link">Resume</a></li>
+                    <li><a href="mailto:devinhumphreys@hotmail.com" class="header-link">Contact Me</a></li>
+                    <li><a href="/" class="header-link">Projects</a></li>
                 </div>
             </ul>
         </div>
     </header>
 {% endblock %}
 
+{% block intro %}
+    <div class='intro-container'>
+        <h2 class='intro-name'>
+            About
+        </h2>
+        <div class='intro-meta-container'>
+            <div class='intro-image-container'>
+                <img class='intro-image' src="{% static 'head_shot.png' %}"/>
+            </div>
+            <div class='intro-description-container'>
+                <p class='intro-description'>Fully stacked, Full Stack Engineer.  I've got a couple of the projects I've worked on in the past below.  
+                    <br/>Take a look, and message me if you like what you see!</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
 
 {% block projects %}
-<div class="project-container">
+<div class="projects">
 {% for project in projects.all %}
-    {% if  %}
-    <div class="project-slate count-{{ forloop.counter|sub:1 }} row-{{ forloop.counter|sub:1|intdiv:3 }}">
-        <h3 class="project-title">{{ project.title }}</h3>
-        <img class="project-image" src="{{ project.image.url }}" />
-        <p class="project-description">{{ project.description }}</p>
-        {% if project.link is not None %}
-        <p class="project-link"><a href="">{{ project.link }}</a></p>
-        {% endif %}
-    </div>
+    {% if forloop.counter|sub:1|mod:3 == 0 %}<div class="project-container-row row-{{ forloop.counter|sub:1|intdiv:3 }}">{% endif %}
+        <div class="project-slate count-{{ forloop.counter|sub:1 }}">
+            <h3 class="project-title">{{ project.title }}</h3>
+            <img class="project-image" src="{{ project.image.url }}" />
+            <div class="project-description-link-container">
+                <p class="project-description" >{{ project.description }}</p>
+                {% if project.link is not None %}
+                <p class="project-link"><a href="">{{ project.link }}</a></p>
+                {% endif %}
+            </div>
+        </div>
+    {% if forloop.counter|mod:3 == 0 or forloop.last %}</div>{% endif %}
 {% endfor %}
 </div>
 {% endblock %}
