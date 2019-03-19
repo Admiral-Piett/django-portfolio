@@ -77,16 +77,27 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
+# TODO: This needs to be set up on startup if it doesn't exist and off environment variables
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'portfolio',
+        'NAME': 'postgres',
         'USER': 'postgres',
-        'PASSWORD': 'acili13igafu',
-        'HOST': 'localhost',
+        'HOST': 'db',
         'PORT': '5432'
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': os.environ['ENV_DATABASE_NAME'],
+#         'USER': os.environ['ENV_USER'],
+#         'PASSWORD': os.environ['ENV_PASSWORD'],
+#         'HOST': 'db',
+#         'PORT': '5432'
+#     }
+# }
 
 
 # Password validation
