@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  db:
+    image: postgres
+    volumes: 
+      - init/init.sql
+  web:
+    env_file: init/web_variables.env
+    build: .
+    container_name: django-porfolio
+    command: >
+      bash -c "python portfolio/manage.py migrate && 
+      python portfolio/manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db

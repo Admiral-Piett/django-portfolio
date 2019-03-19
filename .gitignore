@@ -4,6 +4,7 @@
 *.sqlite3
 *.pdf
 *.png
+*.env
 
 .idea/*
 
